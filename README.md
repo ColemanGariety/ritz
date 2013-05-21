@@ -10,21 +10,17 @@ Add this to your JavaScript:
 
 ```JavaScript
 var ritz = function(node) {
-  var node = node || document.body
-  var func = function(node) {
-    var exclude = ["BODY", "SCRIPT", "STYLE"]
-    if (node.nodeType == 3  && node.data.indexOf("&") != -1 && exclude.indexOf(node.nodeName) == -1) {
-      console.log(node.parentNode)
-      node.parentNode.innerHTML = node.data.replace(/&/, "<span style=\"font-family: Baskerville; font-style: italic; font-weight: 100;\">&</span>")
-    }
-  }
-  func(node);
+  var node = node || document.body;
+  if (node.nodeType == 3  && node.data.indexOf("&") != -1 && ["BODY", "SCRIPT", "STYLE"].indexOf(node.nodeName) == -1) {
+    node.parentNode.innerHTML = node.data.replace(/&/, "<span style=\"font-family: Baskerville; font-style: italic; font-weight: 100;\">&</span>");
+  };
+
   node = node.firstChild;
   while (node) {
-    ritz(node, func);
+    ritz(node);
     node = node.nextSibling;
-  }
-}
+  };
+};
 ```
 
 Usage
