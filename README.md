@@ -8,7 +8,7 @@ Installation
 
 Add this to your JavaScript:
 
-`var ritz = function(node) {
+```var ritz = function(node) {
     var node = node || document.body
     var func = function(node) {
       var exclude = ["BODY", "SCRIPT", "STYLE"]
@@ -23,7 +23,7 @@ Add this to your JavaScript:
       ritz(node, func);
       node = node.nextSibling;
     }
-  }`
+  }```
 
 Usage
 =====
