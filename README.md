@@ -8,7 +8,7 @@ Installation
 
 Add this to your JavaScript:
 
-```bash
+```JavaScript
 var ritz = function(node) {
     var node = node || document.body
     var func = function(node) {
